@@ -4,16 +4,16 @@
     <header ng-include="'app/components/navbar/navbar.html'"></header>
 
     <section class="jumbotron">
-      <h1>'Allo, 'Allo!</h1>
+      <h1>Giorg.io!</h1>
       <p class="lead">
         <img src="assets/images/yeoman.png" alt="I'm Yeoman"><br>
-        Always a pleasure scaffolding your apps.
+        Customize your time.
       </p>
       <p><a class="btn" ng-href="#">Splendid!</a></p>
     </section>
 
     <div class="techs" layout-align="center">
-      <md-card ng-repeat="awesomeThing in awesomeThings | orderBy:'rank'">
+      <md-card ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
         <div class="thumbnail">
           <img class="pull-right" ng-src="assets/images/{{awesomeThing.logo}}" alt="{{awesomeThing.title}}">
           <div class="caption">

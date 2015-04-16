@@ -1,6 +1,6 @@
 'use strict';
+function NavbarCtrl() {
+	var vm = this;
 
-angular.module('giorgio')
-  .controller('NavbarCtrl', function ($scope) {
-    $scope.date = new Date();
-  });
+	vm.date = new Date();
+}
