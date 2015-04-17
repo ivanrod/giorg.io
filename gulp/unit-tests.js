@@ -28,12 +28,14 @@ module.exports = function(options) {
 
     var srcFiles = [
       options.src + '/app/**/*.js'
-    ].concat(specFiles.map(function(file) {
+    ]
+    .concat(specFiles.map(function(file) {
       return '!' + file;
     }));
 
 
     gulp.src(srcFiles)
+      .pipe($.angularFilesort())
       .pipe(concat(function(files) {
         callback(bowerDeps.js
           .concat(_.pluck(files, 'path'))

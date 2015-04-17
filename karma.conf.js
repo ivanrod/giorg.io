@@ -22,6 +22,11 @@ module.exports = function(config) {
 
     preprocessors: {
       'src/**/*.html': ['ng-html2js']
+    },
+    angularFilesort: {
+      whitelist: [
+        'app/**/*.js'
+      ]
     }
   };
 
