@@ -7,4 +7,4 @@ function MainCtrl(sharedData) {
   angular.forEach(vm.awesomeThings, function(awesomeThing) {
     awesomeThing.rank = Math.random();
   });
-};
+}

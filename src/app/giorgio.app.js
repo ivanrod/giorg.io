@@ -22,6 +22,7 @@
 			.service('sharedData', sharedData)
 			.controller('MainCtrl', MainCtrl)
 			.controller('NavbarCtrl', NavbarCtrl)
+			;
 			
 
 	////////////////////////////////////////////////////////
