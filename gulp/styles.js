@@ -30,6 +30,7 @@ module.exports = function(options) {
     };
 
     var indexFilter = $.filter('index.scss');
+    var indexFilter2 = $.filter('animate.scss');
     var vendorFilter = $.filter('vendor.scss');
 
     return gulp.src([

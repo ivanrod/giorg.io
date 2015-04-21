@@ -1,3 +1,4 @@
+'use strict';
 describe("Coursera API helper function ", function() {
   var CourseraFactory;
 
