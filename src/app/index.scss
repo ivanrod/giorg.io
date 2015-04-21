@@ -72,11 +72,11 @@ section.jumbotron {
 }
 
 [ui-view].ng-leave {
-  animation: slideInUp 1s;
+  animation: slideInDown 1s;
 }
 
 [ui-view].ng-leave-active {
-  animation: slideInUp 1s;
+  animation: slideInDown 1s;
 }
 
 /* Do not remove this comments bellow. It's the markers used by gulp-inject to inject

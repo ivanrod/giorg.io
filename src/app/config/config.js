@@ -18,6 +18,16 @@ function giorgioConfig($stateProvider, $urlRouterProvider) {
           }
         }
       })
+      .state('home.contact', {
+        url: 'contact',
+        views: {
+          'viewNormal':{
+            templateUrl: 'app/contact/contact.html',
+            controller: 'ContactCtrl',
+            controllerAs: 'contact'
+          }
+        }     
+      })
       .state('home.dashboard', {
         url: 'dashboard',
         views: {

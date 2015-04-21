@@ -22,6 +22,7 @@
 			.service('sharedData', sharedData)
 			.controller('DashboardCtrl', DashboardCtrl)
 			.controller('MainCtrl', MainCtrl)
+			.controller('ContactCtrl', ContactCtrl)
 			.controller('NavbarCtrl', NavbarCtrl)
 			.controller('SidebarCtrl', SidebarCtrl)
 			.controller('LayoutCtrl', LayoutCtrl)
@@ -36,6 +37,7 @@
 	sharedData.$inject = [];
 	DashboardCtrl.$inject = ['sharedData'];
 	MainCtrl.$inject = ['sharedData'];
+	ContactCtrl.$inject = [];
 	NavbarCtrl.$inject = [];
 	SidebarCtrl.$inject = [];
 	LayoutCtrl.$inject = [];
