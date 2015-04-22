@@ -1,10 +1,24 @@
-<md-list>
 
-  <md-subheader class="md-no-sticky">Single Action Checkboxes</md-subheader>
-  <md-list-item ng-click="goToPerson(person.name, $event)">
-    <img alt="mm" ng-src="assets/images/angular.png" class="md-avatar" />
-    <p>mm</p>
-    <md-icon md-svg-icon="communication:ic_call_end_24px" ng-click="doSecondaryAction($event)" aria-label="Open Chat" class="md-secondary md-hue-3" ng-class="{'md-primary': person.newMessage}"></md-icon>
+<md-list>
+  <md-subheader class="md-no-sticky">Coursera</md-subheader>
+  <md-list-item layout="row" class="md-2-line" ng-repeat="item in dashboard.coursera">
+    <md-button flex>
+      <div class="md-list-item-text" layout="row">
+        <h3 flex="20">{{item.title}}</h3>
+        <p flex>{{item.description}}</p>
+      </div>
+    </md-button>
+    
   </md-list-item>
 
+  <md-subheader class="md-no-sticky">edX</md-subheader>
+  <md-list-item layout="row" class="md-2-line" ng-repeat="item in dashboard.edx">
+    <md-button flex>
+      <div class="md-list-item-text" layout="row">
+        <h3 flex="20">{{item.title}}</h3>
+        <p flex"80">{{item.description}}</p>
+      </div>
+    </md-button>
+    
+  </md-list-item>
 </md-list>
