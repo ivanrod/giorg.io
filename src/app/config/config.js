@@ -1,5 +1,8 @@
-function giorgioConfig($stateProvider, $urlRouterProvider) {
+function giorgioConfig($mdIconProvider, $stateProvider, $urlRouterProvider) {
 	'use strict';
+    $mdIconProvider
+          .iconSet('communication', '././bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-communication.svg',24)
+          .icon('action:dashboard', '././bower_components/material-design-icons/action/svg/design/ic_dashboard_24px.svg',24);
 
     $stateProvider
       .state('home', {

@@ -33,7 +33,7 @@
 	// Dependencies injection to prevent manglification  //
 	////////////////////////////////////////////////////////
 
-	giorgioConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
+	giorgioConfig.$inject = ['$mdIconProvider', '$stateProvider', '$urlRouterProvider'];
 	sharedData.$inject = [];
 	DashboardCtrl.$inject = ['sharedData'];
 	MainCtrl.$inject = ['sharedData'];

@@ -1,0 +1,10 @@
+<md-list>
+
+  <md-subheader class="md-no-sticky">Single Action Checkboxes</md-subheader>
+  <md-list-item ng-click="goToPerson(person.name, $event)">
+    <img alt="mm" ng-src="assets/images/angular.png" class="md-avatar" />
+    <p>mm</p>
+    <md-icon md-svg-icon="communication:ic_call_end_24px" ng-click="doSecondaryAction($event)" aria-label="Open Chat" class="md-secondary md-hue-3" ng-class="{'md-primary': person.newMessage}"></md-icon>
+  </md-list-item>
+
+</md-list>
