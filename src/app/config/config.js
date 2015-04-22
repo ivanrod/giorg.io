@@ -38,6 +38,46 @@ function giorgioConfig($stateProvider, $urlRouterProvider) {
           }
         }     
       })
+      .state('home.dashboard.index', {
+        url: '/',
+        views: {
+          'dashboardPartial': {
+            templateUrl: 'app/dashboard/partials/index.html',
+            controller: 'DashboardCtrl',
+            controllerAs: 'dashboard'            
+          }
+        }
+      })
+      .state('home.dashboard.mycourses', {
+        url: '/mycourses',
+        views: {
+          'dashboardPartial': {
+            templateUrl: 'app/dashboard/partials/mycourses.html',
+            controller: 'DashboardCtrl',
+            controllerAs: 'dashboard'            
+          }
+        }
+      })
+      .state('home.dashboard.plan', {
+        url: '/plan',
+        views: {
+          'dashboardPartial': {
+            templateUrl: 'app/dashboard/partials/plan.html',
+            controller: 'DashboardCtrl',
+            controllerAs: 'dashboard'            
+          }
+        }
+      })
+      .state('home.dashboard.tools', {
+        url: '/tools',
+        views: {
+          'dashboardPartial': {
+            templateUrl: 'app/dashboard/partials/tools.html',
+            controller: 'DashboardCtrl',
+            controllerAs: 'dashboard'            
+          }
+        }
+      })
       ;
 
     $urlRouterProvider.otherwise('/main');
