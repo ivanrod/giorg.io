@@ -20,6 +20,7 @@
 		.module('giorgio')
 			.config(giorgioConfig)
 			.service('sharedData', sharedData)
+			.factory('CourseraFactory', CourseraFactory)
 			.controller('DashboardCtrl', DashboardCtrl)
 			.controller('MainCtrl', MainCtrl)
 			.controller('ContactCtrl', ContactCtrl)
@@ -35,6 +36,7 @@
 
 	giorgioConfig.$inject = ['$mdIconProvider', '$stateProvider', '$urlRouterProvider'];
 	sharedData.$inject = [];
+	CourseraFactory.$inject = [];
 	DashboardCtrl.$inject = ['sharedData'];
 	MainCtrl.$inject = ['sharedData'];
 	ContactCtrl.$inject = [];
