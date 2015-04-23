@@ -1,24 +1,27 @@
+<md-subheader class="md-no-sticky">Coursera</md-subheader>
+<md-content layout="row" layout-wrap layout-align="center center">
+  <md-card flex="30"  ng-repeat="item in dashboard.coursera">
+   <md-card-content>
+     <h2>{{item.title}}</h2>
+     <p>{{item.description}}</p>
+      <md-action-bar layout="row" layout-align="end end">
+        <md-button>Ver</md-button>
+        <md-button>Editar</md-button>
+      </md-action-bar>
+   </md-card-content>
+  </md-card>
+</md-content> 
 
-<md-list>
-  <md-subheader class="md-no-sticky">Coursera</md-subheader>
-  <md-list-item layout="row" class="md-2-line" ng-repeat="item in dashboard.coursera">
-    <md-button flex>
-      <div class="md-list-item-text" layout="row">
-        <h3 flex="20">{{item.title}}</h3>
-        <p flex>{{item.description}}</p>
-      </div>
-    </md-button>
-    
-  </md-list-item>
-
-  <md-subheader class="md-no-sticky">edX</md-subheader>
-  <md-list-item layout="row" class="md-2-line" ng-repeat="item in dashboard.edx">
-    <md-button flex>
-      <div class="md-list-item-text" layout="row">
-        <h3 flex="20">{{item.title}}</h3>
-        <p flex"80">{{item.description}}</p>
-      </div>
-    </md-button>
-    
-  </md-list-item>
-</md-list>
+<md-subheader class="md-no-sticky">edX</md-subheader>
+<md-content layout="row" layout-wrap layout-align="center start">
+  <md-card flex="30" ng-repeat="item in dashboard.edx">
+   <md-card-content>
+     <h2>{{item.title}}</h2>
+     <p>{{item.description}}</p>
+      <md-action-bar layout="row" layout-align="end end">
+        <md-button>Ver</md-button>
+        <md-button>Editar</md-button>
+      </md-action-bar>
+   </md-card-content>
+  </md-card>
+</md-content> 
