@@ -1,5 +1,3 @@
-node_modules/
-bower_components/
-.sass-cache/
-.tmp/
-dist/
+js/vendor
+node_modules
+npm-debug.log
