@@ -56,7 +56,8 @@ var myCourses = [{
       // },
       filters: function(){
         var filters = app.filters;
-        return filters[arguments[0]](arguments[1], arguments[2]);
+
+        return filters[arguments[0]].apply(app.filters, Array.prototype.slice.call(arguments, 1));
       },
       ready: function() {
         //this.filters = document.createElement('x-filters');
