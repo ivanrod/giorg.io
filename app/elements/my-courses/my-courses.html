@@ -7,11 +7,6 @@ The complete set of contributors may be found at http://polymer.github.io/CONTRI
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
-<iron-ajax
-    auto
-    url="./courses.json"
-    handle-as="json"
-    on-response="handleResponse"></iron-ajax>
 
 <dom-module id="my-courses">
   <style>
@@ -21,8 +16,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </style>
   <template>
     <ul>
-      <template is="dom-repeat" items="{{courses}}" as="course" filter="{{_myFilter(courses, 2)}}" >
-        <li><span class="paper-font-body1">{{course.title}}</span></li>
+      <x-filters></x-filters>
+      <template is="dom-repeat" items="{{ courses }}" as="course" filter="{{ filters('limitTo', courses, 2) }}" >
+        <li><span class="paper-font-body1">{{ course.title }}</span></li>
       </template>
     </ul>
   </template>
@@ -58,34 +54,45 @@ var myCourses = [{
       //     notify: true,
       //   }
       // },
+      filters: function(){
+        var filters = app.filters;
+        return filters[arguments[0]](arguments[1], arguments[2]);
+      },
       ready: function() {
+        //this.filters = document.createElement('x-filters');
         this.courses = myCourses;
         //https://github.com/PolymerElements/iron-ajax/blob/master/iron-ajax.html
         this.request = document.createElement('iron-request');
         this.ajax = document.createElement('iron-ajax');
+        console.log(this.$.ajaxPost)
         console.log(this.ajax.generateRequest())
         console.log(this.request)
       },
-      _myF: function(data, limit) {
-        console.log("Course", data);
-        this.x += 1;
-        console.log(this.x)
-        if (this.x > limit) {return false}
-        return data
-      },
+
       //Hay que especificar una función de filtro,
       //por lo que se puede hacer este workaround
       //Se llama con {{}} a una función con la variable global(books)
       //que devuelve una función para cada elemento
       //Bindeando podemos especificar los parámetros que queramos
-      _myFilter: function(data, limit) {
-        this.x = 0;
-        console.log("Course", data);
-        return this._myF.bind(this, data, limit);
-      },
-      handleResponse: function(data){
-        console.log("ajax ", data)
-      }
+      // _myFilter: function(data, limit) {
+      //   this.x = 0;
+      //   console.log("Course", data);
+      //   return this._myF.bind(this, data, limit);
+      // },
+      // _myF: function(data, limit) {
+      //   console.log("Course", data);
+      //   this.x += 1;
+      //   console.log(this.x)
+      //   if (this.x > limit) {return false}
+      //   return data
+      // },
+      // handleResponse: function(data){
+      //   console.log("ajax ", data)
+      // },
+      // _my: function(data){
+      //   console.log('efw', data)
+      //   if (data == "Title 1"){return data}else{return false}
+      // }
     });
   })();
 </script>

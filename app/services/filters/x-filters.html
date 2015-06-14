@@ -1,0 +1,39 @@
+<dom-module id="x-filters">
+	<template></template>
+</dom-module>
+<script>
+	(function () {
+		Polymer({
+			is: 'x-filters',
+			//Para repeats:
+	      //Hay que especificar una función de filtro,
+	      //por lo que se puede hacer este workaround
+	      //Se llama con {{}} a una función con la variable global(books)
+	      //que devuelve una función para cada elemento
+	      //Bindeando podemos especificar los parámetros que queramos
+			limitTo: function(data, limit) {
+				this.counter = 0;
+
+				return this._limitTo.bind(this, data, limit)
+			},
+			_limitTo: function(data, limit) {
+				this.counter += 1;
+
+				if (this.counter > limit) {
+					return false;
+				}
+				return data;
+			},
+			currency: function() {
+
+			},
+			random: function() {
+
+			},
+			uppercase: function() {
+
+			}
+		});
+	})();
+
+</script>
