@@ -1,0 +1,18 @@
+{
+  "email_or_username": {
+    "description": "...",
+    "message": "E-mail or username"
+  },  
+  "days": {
+    "description": "...",
+    "message": "days"
+  },
+  "hours": {
+    "description": "...",
+    "message": "hours"
+  },
+  "minutes": {
+    "description": "...",
+    "message": "minutes"
+  }
+}

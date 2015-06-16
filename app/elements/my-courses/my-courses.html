@@ -17,7 +17,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <template>
     <ul>
       <x-filters></x-filters>
-      <template is="dom-repeat" items="{{ courses }}" as="course" filter="{{ filters('limitTo', courses, 2) }}" >
+      <p>"Days" in Spanish is <i18n-msg msgid="days">days</i18n-msg>!</p>
+      <p id="pure"></p>
+      <p>Translation <span>{{translation('days')}}</span></p>
+      <template id="lag" is="dom-repeat" items="{{ courses }}" as="course" filter="{{ filters('limitTo', courses, 2) }}" >
         <li><span class="paper-font-body1">{{ course.title }}</span></li>
       </template>
     </ul>
@@ -55,11 +58,11 @@ var myCourses = [{
       //   }
       // },
       filters: function(){
-        var filters = app.filters;
-
-        return filters[arguments[0]].apply(app.filters, Array.prototype.slice.call(arguments, 1));
+        return app.filters[arguments[0]].apply(app.filters, Array.prototype.slice.call(arguments, 1));
       },
+      translation: function(){},
       ready: function() {
+        var that = this;
         //this.filters = document.createElement('x-filters');
         this.courses = myCourses;
         //https://github.com/PolymerElements/iron-ajax/blob/master/iron-ajax.html
@@ -68,6 +71,16 @@ var myCourses = [{
         console.log(this.$.ajaxPost)
         console.log(this.ajax.generateRequest())
         console.log(this.request)
+
+      document.addEventListener('i18n-language-ready', function(e) {
+        var daysMsgEl = document.createElement('i18n-msg');
+        that.$.pure.innerHTML = daysMsgEl.getMsg('hours');
+      });
+
+      app.translator.promise.then(function(success){
+        this.translation = success;
+      });
+
       },
 
       //Hay que especificar una función de filtro,

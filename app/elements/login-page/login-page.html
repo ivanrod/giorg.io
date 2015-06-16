@@ -1,0 +1,33 @@
+<dom-module id="login-page">
+  <style>
+    :host {
+      display: block;
+    }
+  </style>
+  <template>
+    <paper-input-container>
+
+      <label><i18n-msg msgid="email_or_username">email_or_username</i18n-msg></label>
+      <input is="iron-input" type="email" error-message="email_error" onblur="validate()">
+        <paper-input-error><i18n-msg msgid="email_error">email_error</i18n-msg>email_error</paper-input-error>
+      </input>  
+    </paper-input-container>  
+    <paper-input-container>
+      <label><i18n-msg msgid="password">password</i18n-msg></label>
+      <input is="iron-input" type="password" pattern=".{4,}" error-message="password_error" onblur="validate()">
+        <paper-input-error><i18n-msg msgid="too_short">too_short</i18n-msg></paper-input-error>
+      </input>
+    </paper-input-container>
+    <paper-button raised><i18n-msg msgid="button_text">button_text</i18n-msg></paper-button>
+    <a href=""><i18n-msg msgid="dont_remember">dont_remember</i18n-msg></a>
+  </template>
+</dom-module>
+<script>
+(function () {
+  Polymer({
+    is: 'login-page',
+    ready:function(){
+    }
+    })
+})();
+</script>

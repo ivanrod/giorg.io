@@ -16,8 +16,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   var app = document.querySelector('#app');
 
   // Services
-  
   app.filters = document.createElement('x-filters');
+
+  document.addEventListener('HTMLImportsLoaded', function() {
+    I18nMsg.lang = app.language || document.documentElement.lang || 'en';
+  });
+
+  app.translator = Promise.defer();
+
+  document.addEventListener('i18n-language-ready', function(e) {
+    var translation = document.createElement('i18n-msg');
+    app.translator.resolve(translation.getMsg);
+  });
 
   app.displayInstalledToast = function() {
     document.querySelector('#caching-complete').show();
